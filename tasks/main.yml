@@ -1,0 +1,25 @@
+---
+- name: resolve platform specific vars
+  include_vars: '{{item}}'
+  with_first_found:
+    - files:
+        - '{{ansible_distribution}}-{{ansible_distribution_release}}.yml'
+        - '{{ansible_distribution}}.yml'
+        - '{{ansible_os_family}}.yml'
+      skip: true
+      paths:
+        - '{{role_path}}/vars'
+
+- name: configure npm..
+  with_items:
+    - action: config set
+      arg: prefix '{{node_config_install_dir}}'
+      global: True
+    - action: install
+      arg: npm@{{node_config_npm_version}}
+      global: True
+  command: >-
+    {{node_config_npm}}
+    {{"-g" if item.global else ""}}
+    {{item.action}}
+    {{item.args}}

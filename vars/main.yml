@@ -1,0 +1,3 @@
+---
+# vars file for node-config
+node_config_npm: '{{node_config_install_dir}}/bin/npm'

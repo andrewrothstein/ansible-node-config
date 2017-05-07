@@ -1,0 +1,4 @@
+---
+# defaults file for node-config
+node_config_install_dir: /usr/local/node
+node_config_npm_version: '4.5.0'
