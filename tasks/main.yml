@@ -10,16 +10,15 @@
       paths:
         - '{{role_path}}/vars'
 
-- name: configure npm..
+- name: configure..
   with_items:
+    - action: set
+      args: progress=false
+      global: True
     - action: config set
-      arg: prefix '{{node_config_install_dir}}'
+      args: prefix '{{node_config_install_dir}}'
       global: True
     - action: install
-      arg: npm@{{node_config_npm_version}}
+      args: npm@{{node_config_npm_version}}
       global: True
-  command: >-
-    {{node_config_npm}}
-    {{"-g" if item.global else ""}}
-    {{item.action}}
-    {{item.args}}
+  command: bash -l -c 'npm {{"-g" if item.global else ""}} {{item.action}} {{item.args}}'
