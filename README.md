@@ -1,6 +1,6 @@
-[![CircleCI](https://circleci.com/gh/andrewrothstein/ansible-node-config.svg?style=svg)](https://circleci.com/gh/andrewrothstein/ansible-node-config)
 andrewrothstein.node-config
 =========
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-node-config.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-node-config)
 
 Sets some node configurations and installs npm.
 
