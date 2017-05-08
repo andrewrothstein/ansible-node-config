@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: '@TODO name this role'
+  description: role for configuring nodejs
   company: BlackRock
   license:
     - MIT
@@ -14,9 +14,6 @@ galaxy_info:
       versions:
         - all
     - name: Ubuntu
-      versions:
-        - all
-    - name: Alpine
       versions:
         - all
   galaxy_tags:
